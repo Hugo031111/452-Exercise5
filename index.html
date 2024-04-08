@@ -1,0 +1,90 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>My Webpage</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 0;  
+            padding: 0;  
+            display: flex; /* Center content vertically and horizontally */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure page covers full viewport height */
+        }  
+  
+        .header {  
+            text-align: center;  
+            padding: 20px;  
+            position: absolute;  
+            top: 0;  
+            left: 50%;  
+            transform: translateX(-50%); /* Center horizontally */
+            font-size: 14px; /* Adjust font size */
+        }  
+  
+        .header p {  
+            font-size: 20px;  
+            margin: 0;  
+        }  
+  
+        .header .pinyin-name {  
+            display: block;  
+            margin-top: 5px;  
+            font-size: 16px;  
+        }  
+  
+        .image-container {  
+            text-align: center;  
+            margin-top: 20px;  
+            position: relative; /* Needed for absolute positioning of elements inside */
+        }  
+  
+        .image-title {  
+            font-size: 32px;  
+            position: absolute;  
+            top: -80px; /* Adjust as needed to place it above the image */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+            background-color: #ddd; /* Added gray background color */
+            padding: 10px; /* Added padding for spacing */
+        }  
+  
+        .image-container img {  
+            max-width: 50%; /* Reduce image size to 50% of original */
+            height: auto;  
+        }  
+  
+        button {  
+            margin-top: 10px;  
+            padding: 10px 20px;  
+            font-size: 16px;  
+            cursor: pointer;  
+            position: absolute;  
+            bottom: -40px; /* Adjust as needed to place it below the image */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center horizontally */
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="header">  
+        <p>My name is Hugo <span class="pinyin-name">Pinyin name is XuHao</span></p>  
+    </div>  
+    <div class="image-container">  
+        <div class="image-title">This is my attractive image using box model</div>  
+        <img id="myImage" src="1.jpg" alt="My Image">  
+        <button onclick="changeImage()">Replace Image</button>  
+    </div>  
+    <script>  
+        function changeImage() {  
+            var imageElement = document.getElementById('myImage');  
+            var currentSrc = imageElement.src;  
+            var newSrc = currentSrc.endsWith('1.jpg') ? '2.jpg' : '1.jpg';  
+            imageElement.src = newSrc;  
+        }  
+    </script>  
+</body>  
+</html>
